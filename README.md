@@ -1,6 +1,6 @@
 # CAEd Infra Tools
 
-## Requisitos
+## Requisito
 
 ### Criando venv
 `python -m venv /path/to/new/virtual/environment/infra_gui`
