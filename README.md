@@ -8,7 +8,7 @@
 `source /path/to/new/virtual/environment/infra_gui/bin/active`
 
 ### Instalando Pyside
-`pip install pyside6`
+`pip install pyside6 self`
 
 ### Links Úteis
 
