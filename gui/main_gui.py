@@ -139,7 +139,7 @@ class Ui_MainWindow(object):
         # Recupera
         self.label_recuperar.setText(QCoreApplication.translate("MainWindow", u"Recuperar sistema (chkdsk, sfc, dism)", None))
         self.pushButton_recuperar.setText(QCoreApplication.translate("MainWindow", u"Recuperar", None))
-        self.pushButton_recuperar.clicked.connect(self.recupera)
+        self.pushButton_recuperar.clicked.connect(self.recupera_gui)
         # Opcao 2
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"2", None))
         self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"E", None))
@@ -156,8 +156,8 @@ class Ui_MainWindow(object):
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"6", None))
         self.pushButton_6.setText(QCoreApplication.translate("MainWindow", u"D", None))
 
-        def recupera_gui(self):
-            os_recovery()
+    def recupera_gui(self):
+        os_recovery()
 
 
 
