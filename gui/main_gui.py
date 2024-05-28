@@ -103,7 +103,6 @@ class Ui_MainWindow(object):
         self.pushButton_2.setObjectName(u"pushButton_2")
         self.gridLayout.addWidget(self.pushButton_2, 3, 1, 1, 1)
 
-
         self.horizontalLayout.addLayout(self.gridLayout)
 
         MainWindow.setCentralWidget(self.centralwidget)
@@ -137,7 +136,8 @@ class Ui_MainWindow(object):
         self.menuSobre.setTitle(QCoreApplication.translate("MainWindow", u"Ajuda", None))
 
         # Recupera
-        self.label_recuperar.setText(QCoreApplication.translate("MainWindow", u"Recuperar sistema (chkdsk, sfc, dism)", None))
+        self.label_recuperar.setText(
+            QCoreApplication.translate("MainWindow", u"Recuperar sistema (chkdsk, sfc, dism)", None))
         self.pushButton_recuperar.setText(QCoreApplication.translate("MainWindow", u"Recuperar", None))
         self.pushButton_recuperar.clicked.connect(self.recupera_gui)
         # Opcao 2
@@ -158,7 +158,6 @@ class Ui_MainWindow(object):
 
     def recupera_gui(self):
         os_recovery()
-
 
 
 app = QApplication([])
