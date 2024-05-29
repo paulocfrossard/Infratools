@@ -103,6 +103,24 @@ class Ui_MainWindow(object):
         self.pushButton_2.setObjectName(u"pushButton_2")
         self.gridLayout.addWidget(self.pushButton_2, 3, 1, 1, 1)
 
+        # 6 1 1 1 Teste de inserção via python
+        ## Criando Status SFC /scannow
+        self.labelSfc = QLabel(self.centralwidget)
+        self.labelSfc.setObjectName(u"labelSfc")
+        self.gridLayout.addWidget(self.labelSfc, 6, 0, 1, 1)
+
+        self.labelSfc_status = QLabel(self.centralwidget)
+        self.labelSfc_status.setObjectName(u"labelSfc_status")
+        self.gridLayout.addWidget(self.labelSfc_status, 6, 1, 1, 1)
+        ## Criando Status chkdsk /F
+        self.labelChkdsk = QLabel(self.centralwidget)
+        self.labelChkdsk.setObjectName(u"labelChkdsk")
+        self.gridLayout.addWidget(self.labelChkdsk, 6, 2, 1, 1)
+        self.labelChkdsk_status = QLabel(self.centralwidget)
+        self.labelChkdsk_status.setObjectName(u"labelChkdsk_status")
+        self.gridLayout.addWidget(self.labelChkdsk_status, 6, 3, 1, 1)
+
+
         self.horizontalLayout.addLayout(self.gridLayout)
 
         MainWindow.setCentralWidget(self.centralwidget)
@@ -155,9 +173,14 @@ class Ui_MainWindow(object):
         # Opcao 6
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"6", None))
         self.pushButton_6.setText(QCoreApplication.translate("MainWindow", u"D", None))
-
+        # 6 1 1 1 Teste de inserção via python
+        self.labelSfc.setText(QCoreApplication.translate("MainWindow", u"Status SFC: ", None))
+        self.labelChkdsk.setText(QCoreApplication.translate("MainWindow", u"Status CHKDSK: "))
+        self.labelSfc_status.setText(QCoreApplication.translate("MainWindow", u"Não executado"))
+        self.labelChkdsk_status.setText(QCoreApplication.translate("MainWindow", u"Não executado"))
     def recupera_gui(self):
-        os_recovery()
+        sfc, chkdsk = os_recovery()
+        print(sfc, chkdsk)
 
 
 app = QApplication([])

@@ -8,7 +8,7 @@ def os_recovery():
         status = subprocess.call(command, shell=True)
         return status
 
-    a = generic_command("sfc /scannow ")
-    b = generic_command("echo yes | chkdsk C: /f")
+    sfc = generic_command("sfc /scannow ")
+    chkdsk = generic_command("echo s | chkdsk C: /f")
     generic_command("cls")
-    print(a, b)
+    return sfc, chkdsk
