@@ -1,36 +1,116 @@
 # InfraTools
 
-## Venv config
-### Create
-```sh
-python -m venv /path/to/new/virtual/environment/infra_tools
+Aplicativo de ferramentas de infraestrutura com interface moderna em Material Design.
+
+## 🚀 Características
+
+- **Interface Moderna**: Design Material com suporte a tema escuro/claro
+- **8 Funcionalidades**: Recuperação, Diagnóstico de Rede, Renovação de IP, Info do Sistema, Teste de Velocidade, Verificação de Serviços, Limpeza de Temp e Sobre
+- **Execução em Background**: Operações não travam a interface
+- **Diálogos Customizáveis**: Sistema de diálogos genéricos com botões configuráveis
+- **Fácil Manutenção**: Código organizado e comentado para desenvolvedores juniores
+
+## Requisitos
+
+- Python 3.8 ou superior
+- Windows 10/11
+
+## Instalação
+
+### 1. Criar ambiente virtual (recomendado)
+
+```bash
+python -m venv venv
 ```
-### Active
-```sh
-source /path/to/new/virtual/environment/infra_tools/bin/active
+
+### 2. Ativar ambiente virtual
+
+**Windows:**
+```bash
+venv\Scripts\activate
 ```
 
-## Install Dependencies 
-```sh
-pip install pyside6 self socket re uuid
+**Linux/Mac:**
+```bash
+source venv/bin/activate
 ```
 
-## Create config.ini
-The config.ini define the hosts and domain. Exemple:
+### 3. Instalar dependências
 
-[hosts] are advised to be internal links to Microsoft AD or equivalent 
+```bash
+pip install -r requirements.txt
+```
 
-[domain] is internal domain
+## Uso
+
+### Configurar hosts e domínio
+
+Crie um arquivo `config.ini` na mesma pasta do executável:
 
 ```ini
 [hosts]
-ips = 1.1.1.1, 1.0.0.1, 8.8.8.8
+ips = 8.8.8.8, 1.1.1.1, 192.168.1.1
 
 [domain]
-name = exemple.local
+name = seu-dominio.local
 ```
 
+## 📁 Estrutura do Projeto
 
-## Sources
+```
+Infratools/
+├── main.py              # Ponto de entrada
+├── gui.py              # Interface principal (nova versão Material)
+├── requirements.txt    # Dependências
+├── config.ini         # Configuração (criar manualmente)
+├── tools/
+│   ├── get_ip.py     # Funções de rede
+│   ├── network.py    # Ping e renovação de IP
+│   ├── cmd_commands.py # Execução de comandos
+│   ├── recovery.py   # Recuperação do sistema
+│   └── formart.py    # Formatação de dados
+└── img/              # Imagens e ícones
+```
 
-- [PySide6](https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/index.html)
+### Exemplo de diálogo customizável:
+
+```python
+from gui import MaterialDialog
+
+# Diálogo simples
+MaterialDialog.show_dialog(
+    "Sucesso",
+    "Operação concluída!",
+    ["OK"]
+)
+
+# Diálogo de confirmação
+resultado = MaterialDialog.show_dialog(
+    "Confirmação",
+    "Deseja continuar?",
+    ["Sim", "Não"],
+    "question"
+)
+
+if resultado == "Sim":
+    print("Usuário confirmou")
+```
+
+## 📄 Licença
+
+Este projeto está licenciado sob CC BY-NC-SA 4.0 - veja o arquivo [LICENSE](LICENSE) para detalhes.
+
+## 🙏 Créditos
+
+- **qt-material**: Biblioteca de Material Design para PySide6 (BSD-2-Clause)
+- **PySide6**: Framework Qt para Python
+
+## 📞 Suporte
+
+Para dúvidas ou problemas, consulte:
+- GitHub: https://github.com/paulocfrossard/Infratools
+- Documentação: README.md
+
+---
+
+**Nota**: Este software é fornecido como está, sem garantias. Use por sua conta e risco.
